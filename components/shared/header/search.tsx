@@ -8,7 +8,7 @@ export default async function Search() {
         <form action='/search' method='GET' className='flex items-stretch h-10'>
             <Input
                 className='flex-1 rounded-l-md rounded-r-none  bg-transparent
-                text-white text-base dark:border-gray-300  h-full '
+                text-white text-base dark:border-gray-300  h-full ' style={{ border: "0.2px solid grey" }}
                 placeholder={`Поиск  ${APP_NAME}`}
                 name='q'
                 type='search'

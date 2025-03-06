@@ -35,13 +35,13 @@ export default function Header() {
                     <Search />
                 </div>
             </div>
-            <div className='flex items-center px-3 mb-[1px]  bg-gray-800'>
+            <div className='flex  items-center px-3 mb-[1px] w-full justify-center ' style={{ borderTop:'0.1px solid  #4E4E50',
+                backgroundColor: '#1A1A1D' }}>
                 <Button
                     variant='ghost'
                     className='dark header-button flex items-center gap-1 text-base [&_svg]:size-6'
                 >
                     <MenuIcon />
-                    All
                 </Button>
                 <div className='flex items-center flex-wrap gap-3 overflow-hidden   max-h-[42px]'>
                     {data.headerMenus.map((menu) => (
