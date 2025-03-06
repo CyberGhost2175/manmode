@@ -21,7 +21,7 @@ export default function Header() {
                                 src='/icons/frame.svg'
                                 width={40}
                                 height={40}
-                                alt={`${APP_NAME} logo`}
+                                alt={`${APP_NAME} logo`} unoptimized
                             />
                             {APP_NAME}
                         </Link>
