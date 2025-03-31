@@ -4,7 +4,6 @@ import Stripe from 'stripe'
 
 import {Button} from '@/components/ui/button'
 import {getOrderById} from '@/lib/actions/order.actions'
-import {useTranslations} from "next-intl";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
@@ -32,7 +31,6 @@ export default async function SuccessPage(props: {
         return notFound()
 
     const isSuccess = paymentIntent.status === 'succeeded'
-    const t = useTranslations('Checkout')
     if (!isSuccess) return redirect(`/checkout/${id}`)
 
     return (

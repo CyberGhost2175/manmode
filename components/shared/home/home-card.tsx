@@ -52,7 +52,7 @@ export function HomeCard({cards}: { cards: CardItem[]  }) {
 
             {/* Новые поступления и бестселлеры */}
             <div className=' grid-cols-1 md:grid-cols-2 gap-4 flex justify-center items-center'>
-                {cards.slice(1, -1).map((card: any) => (
+                {cards.slice(1, -1).map((card: CardItem) => (
                     <Card key={card.title} className='bg-white  shadow w-full '>
                         <CardContent className='p-6'>
                             <h3 className='text-xl font-bold mb-4 text-center'>{card.title}</h3>
