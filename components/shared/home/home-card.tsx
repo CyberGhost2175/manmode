@@ -3,8 +3,24 @@ import Link from 'next/link'
 import React from 'react'
 import {Card, CardContent, CardFooter} from '@/components/ui/card'
 import {useTranslations} from "next-intl";
+type CardItem = {
+    title: string
+    link: { text: string; href: string }
+    items: {
+        name: string
+        items?: string[]
+        image: string
+        href: string
+    }[]
+}
+type Item = {
+    name: string;
+    items?: string[];
+    image: string;
+    href: string;
+};
 
-export function HomeCard({cards}: { cards: any }) {
+export function HomeCard({cards}: { cards: CardItem[]  }) {
     const t = useTranslations('Categories')
     return (
         <div className='space-y-8 '>
@@ -41,7 +57,7 @@ export function HomeCard({cards}: { cards: any }) {
                         <CardContent className='p-6'>
                             <h3 className='text-xl font-bold mb-4 text-center'>{card.title}</h3>
                             <div className='grid grid-cols-2 gap-4 place-items-center'>
-                                {card.items.slice(0, 4).map((item) => (
+                                {card.items.slice(0, 4).map((item:Item ) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
