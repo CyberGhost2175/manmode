@@ -19,7 +19,7 @@ export const ourFileRouter = {
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: session?.user?.id }
     })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
 
