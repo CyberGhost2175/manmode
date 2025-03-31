@@ -6,8 +6,6 @@ import { getOrderById } from '@/lib/actions/order.actions'
 import OrderDetailsForm from '@/components/shared/order/order-details-form'
 import Link from 'next/link'
 import { formatId } from '@/lib/utils'
-import {createTranslator, useTranslations} from "next-intl";
-import {getMessages} from "next-intl/server";
 import { getTranslations } from 'next-intl/server'
 export async function generateMetadata(props: {
   params: Promise<{ id: string }>

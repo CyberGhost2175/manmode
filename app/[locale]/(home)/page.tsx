@@ -16,7 +16,6 @@ import { getTranslations } from 'next-intl/server'
 export default async function HomePage() {
   const t = await getTranslations('Home')
   const { carousels } = await getSetting()
-  const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
   const bestSellingProducts = await getProductsByTag({ tag: 'best-seller' })
 
   const categories = (await getAllCategories()).slice(0, 4)

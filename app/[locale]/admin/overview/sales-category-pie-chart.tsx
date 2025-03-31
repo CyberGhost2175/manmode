@@ -5,7 +5,6 @@ import useColorStore from '@/hooks/use-color-store'
 import { useTheme } from 'next-themes'
 import React from 'react'
 import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts'
-import {useTranslations} from "next-intl";
 export default function SalesCategoryPieChart({ data }: { data: any[] }) {
   const { theme } = useTheme()
   const { cssColors } = useColorStore(theme)

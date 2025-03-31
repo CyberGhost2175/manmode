@@ -19,7 +19,6 @@ export default async function ProfilePage() {
   const messages = await getMessages();
   const t = createTranslator({ locale: "ru", messages,namespace: "Account" });
   const session = await auth()
-  const { site } = await getSetting()
   return (
     <div className='mb-24'>
       <SessionProvider session={session}>

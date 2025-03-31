@@ -15,7 +15,6 @@ import { IOrder } from '@/lib/db/models/order.model'
 import { formatDateTime, formatId } from '@/lib/utils'
 import BrowsingHistoryList from '@/components/shared/browsing-history-list'
 import ProductPrice from '@/components/shared/product/product-price'
-import {useTranslations} from "next-intl";
 import {getMessages} from "next-intl/server";
 const PAGE_TITLE = 'Your Orders'
 export const metadata: Metadata = {
