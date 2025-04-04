@@ -135,6 +135,29 @@
     "Shipping": "Shipping",
     "Tax": "Tax"
   },
+  "Register": {
+    "sign": "Sign In",
+    "title": "Create Account",
+    "privacyNotice": "Privacy Policy",
+    "conditionOfUse": "Terms of Use",
+    "name": "Name",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "signUp": "Sign Up",
+    "rule": "By registering, you agree to ",
+    "alreadyHave": "Already have an account? "
+  },
+  "Login": {
+    "title": "Sign in to Account",
+    "sign": "Sign In",
+    "privacyNotice": "Privacy Policy",
+    "conditionOfUse": "Terms of Use",
+    "password": "Password",
+    "rule": "By registering, you agree to ",
+    "new": "New user? ",
+    "createAcc": "Create your ManMode account",
+    "signGoogle": "Sign in with Google"
+  },
   "Checkout": {
     "price": "price",
     "quantity": "quantity",

@@ -135,6 +135,29 @@
     "Shipping": "Жеткізу",
     "Tax": "Салық"
   },
+  "Register": {
+    "sign": "Кіру",
+    "title": "Аккаунт жасау",
+    "privacyNotice": "Құпиялылық саясаты",
+    "conditionOfUse": "Пайдалану шарттары",
+    "name": "Аты",
+    "password": "Құпия сөз",
+    "confirmPassword": "Құпия сөзді растау",
+    "signUp": "Тіркелу",
+    "rule": "Тіркелу арқылы сіз келісесіз ",
+    "alreadyHave": "Аккаунтыңыз бар ма? "
+  },
+  "Login": {
+    "title": "Аккаунтқа кіру",
+    "sign": "Кіру",
+    "privacyNotice": "Құпиялылық саясаты",
+    "conditionOfUse": "Пайдалану шарттары",
+    "password": "Құпия сөз",
+    "rule": "Тіркелу арқылы сіз келісесіз ",
+    "new": "Жаңа пайдаланушы? ",
+    "createAcc": "ManMode аккаунтыңызды жасаңыз",
+    "signGoogle": "Google арқылы кіру"
+  },
   "Checkout": {
     "price": "баға",
     "quantity": "саны",

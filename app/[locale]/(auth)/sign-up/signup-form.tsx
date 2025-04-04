@@ -21,14 +21,15 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { UserSignUpSchema } from '@/lib/validator'
 import { Separator } from '@/components/ui/separator'
 import { isRedirectError } from 'next/dist/client/components/redirect-error'
+import {useTranslations} from "next-intl";
 
 const signUpDefaultValues =
   process.env.NODE_ENV === 'development'
     ? {
-        name: 'john doe',
-        email: 'john@me.com',
-        password: '123456',
-        confirmPassword: '123456',
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
       }
     : {
         name: '',
@@ -78,7 +79,7 @@ export default function CredentialsSignInForm() {
       })
     }
   }
-
+const t =useTranslations('Register')
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,9 +90,9 @@ export default function CredentialsSignInForm() {
             name='name'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{t('name')}</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter name address' {...field} />
+                  <Input placeholder={t('name')} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -117,11 +118,11 @@ export default function CredentialsSignInForm() {
             name='password'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>{t('password')}</FormLabel>
                 <FormControl>
                   <Input
                     type='password'
-                    placeholder='Enter password'
+                    placeholder={t('password')}
                     {...field}
                   />
                 </FormControl>
@@ -134,11 +135,11 @@ export default function CredentialsSignInForm() {
             name='confirmPassword'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel>{t('confirmPassword')}</FormLabel>
                 <FormControl>
                   <Input
                     type='password'
-                    placeholder='Confirm Password'
+                    placeholder={t('confirmPassword')}
                     {...field}
                   />
                 </FormControl>
@@ -147,18 +148,18 @@ export default function CredentialsSignInForm() {
             )}
           />
           <div>
-            <Button type='submit'>Sign Up</Button>
+            <Button type='submit'>{t('signUp')}</Button>
           </div>
           <div className='text-sm'>
-            By creating an account, you agree to {site.name}&apos;s{' '}
-            <Link href='/page/conditions-of-use'>Conditions of Use</Link> and{' '}
-            <Link href='/page/privacy-policy'> Privacy Notice. </Link>
+              {t('rule')} {site.name}&apos;s{' '}
+            <Link href='/page/conditions-of-use'>{t('conditionOfUse')}</Link> & {' '}
+            <Link href='/page/privacy-policy'> {t('privacyNotice')} </Link>
           </div>
           <Separator className='mb-4' />
           <div className='text-sm'>
-            Already have an account?{' '}
+              {t('alreadyHave')}{' '}
             <Link className='link' href={`/sign-in?callbackUrl=${callbackUrl}`}>
-              Sign In
+                {t('sign')}
             </Link>
           </div>
         </div>

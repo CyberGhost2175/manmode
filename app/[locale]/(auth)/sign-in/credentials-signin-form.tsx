@@ -21,12 +21,14 @@ import { toast } from '@/hooks/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { UserSignInSchema } from '@/lib/validator'
 import { isRedirectError } from 'next/dist/client/components/redirect-error'
+import {causeWithTrace} from "effect/Micro";
+import {useTranslations} from "next-intl";
 
 const signInDefaultValues =
   process.env.NODE_ENV === 'development'
     ? {
-        email: 'admin@example.com',
-        password: '123456',
+        email: 'example.com',
+        password: '123',
       }
     : {
         email: '',
@@ -65,7 +67,7 @@ export default function CredentialsSignInForm() {
       })
     }
   }
-
+const t = useTranslations('Login')
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -78,7 +80,7 @@ export default function CredentialsSignInForm() {
               <FormItem className='w-full'>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter email address' {...field} />
+                  <Input placeholder=' email ' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,11 +92,11 @@ export default function CredentialsSignInForm() {
             name='password'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>{t('password')}</FormLabel>
                 <FormControl>
                   <Input
                     type='password'
-                    placeholder='Enter password'
+                    placeholder={t('password')}
                     {...field}
                   />
                 </FormControl>
@@ -104,12 +106,12 @@ export default function CredentialsSignInForm() {
           />
 
           <div>
-            <Button type='submit'>Sign In</Button>
+            <Button type='submit'>{t('sign')}</Button>
           </div>
           <div className='text-sm'>
-            By signing in, you agree to {site.name}&apos;s{' '}
-            <Link href='/page/conditions-of-use'>Conditions of Use</Link> and{' '}
-            <Link href='/page/privacy-policy'>Privacy Notice.</Link>
+              {t('rule')} {site.name}&apos;s{' '}
+            <Link href='/page/conditions-of-use'>{t('conditionOfUse')}</Link> and{' '}
+            <Link href='/page/privacy-policy'>{t('privacyNotice')}</Link>
           </div>
         </div>
       </form>
