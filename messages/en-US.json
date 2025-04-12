@@ -205,7 +205,8 @@
     "helpCenter": "Help Center",
     "contactUs": "Contact Us",
     "returnItem": "Within 30 Days of Delivery, You May Return New, Unopened Items in Their Original Condition. Some Exceptions Apply",
-    "returnPolicy": "Return Policy"
+    "returnPolicy": "Return Policy",
+    "inProcessing": "in processing..."
   },
   "Search": {
     "for": "for",
