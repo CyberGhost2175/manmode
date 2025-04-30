@@ -1,4 +1,4 @@
-import Link from 'next/link'
+  import Link from 'next/link'
 
 import DeleteDialog from '@/components/shared/delete-dialog'
 import { Button } from '@/components/ui/button'
