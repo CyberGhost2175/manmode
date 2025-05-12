@@ -205,6 +205,8 @@ export const WebPageInputSchema = z.object({
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
   content: z.string().min(1, 'Content is required'),
   isPublished: z.boolean(),
+  backgroundImage: z.string().optional(), 
+
 })
 
 export const WebPageUpdateSchema = WebPageInputSchema.extend({

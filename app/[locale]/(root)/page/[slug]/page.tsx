@@ -30,13 +30,27 @@ export default async function ProductDetailsPage(props: {
 
     if (!webPage) notFound();
 
+    const bgClass =
+    slug === 'about-us'
+      ? 'bg-about'
+      : slug === 'customer-service'
+      ? 'bg-customer'
+      : slug === 'help'
+      ? 'bg-help'
+      : '';
+
     return (
-        <div className="p-4 max-w-3xl mx-auto">
-            <h1 className="h1-bold py-4 text-center">{webPage.title}</h1>
-            <section className="text-justify text-lg mb-20 web-page-content">
-                <ReactMarkdown>{webPage.content}</ReactMarkdown>
+      <div className={`min-h-screen ${bgClass} flex items-center justify-center`}>
+        <div className="relative w-full max-w-3xl my-12">
+          <div className="absolute inset-0 bg-black/70 z-0 rounded-lg" />
+          <div className="relative z-10 p-8">
+            <h1 className="h1-bold py-4 text-center text-white">{webPage.title}</h1>
+            <section className="text-justify text-lg web-page-content text-white font-bold">
+              <ReactMarkdown>{webPage.content}</ReactMarkdown>
             </section>
+          </div>
         </div>
+      </div>
     );
 }
 

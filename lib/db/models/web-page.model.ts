@@ -27,6 +27,7 @@ const webPageSchema = new Schema<IWebPage>(
       required: true,
       default: false,
     },
+    backgroundImage: { type: String },
   },
   {
     timestamps: true,
